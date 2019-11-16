@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class Quotes {
     String[] facts = {
+            "Bado gari ni gari 🚗 kwa dereva. 💯",
             "Love what you do, do what you love ❤.",
             "Ata ukuwe mtamu😋 aje hauwezi jikula...peana hiyo kitu🍑",
             "Nakata waba 🥃 nijifry liver",
             "Inauma 💔 but itabidi uzoe 👍",
-            "Trust no hoe.",
-            "Gari ni gari 🚗 kwa dereva."
+            "Trust no hoe."
     };
 
     public String getRandomFact() {
