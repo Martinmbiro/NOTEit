@@ -9,7 +9,7 @@ public class Quotes {
             "Nakata waba 🥃 nijifry liver",
             "Inauma 💔 but itabidi uzoe 👍",
             "Trust no hoe.",
-            "Gari ni gari kwa dereva."
+            "Gari ni gari 🚗 kwa dereva."
     };
 
     public String getRandomFact() {
