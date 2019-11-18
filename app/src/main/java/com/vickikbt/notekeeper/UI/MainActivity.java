@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.vickikbt.notekeeper.Adapter.NoteAdapter;
 import com.vickikbt.notekeeper.R;
 import com.vickikbt.notekeeper.Room.Entity;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent addNote = new Intent(MainActivity.this, AddEditNoteActivity.class);
-                startActivityForResult(addNote, 1);
+                startActivityForResult(addNote, ADD_NOTE_REQUEST);
             }
         });
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 noteViewModel.delete(adapter.getNoteAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(MainActivity.this, "Note Deleted!", Toast.LENGTH_SHORT).show();
+                StyleableToast.makeText(MainActivity.this, "Note Deleted!.", R.style.Warning).show();
             }
         }).attachToRecyclerView(recyclerView);
 
@@ -80,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(AddEditNoteActivity.EXTRA_ID, note.getId());
                 intent.putExtra(AddEditNoteActivity.EXTRA_TITLE, note.getTitle());
                 intent.putExtra(AddEditNoteActivity.EXTRA_DESCRIPTION, note.getDescription());
-                intent.putExtra(AddEditNoteActivity.EXTRA_PRIORITY, note.getPriority());
-                startActivity(intent);
+                startActivityForResult(intent, EDIT_NOTE_REQUEST);
             }
         });
 
@@ -94,32 +93,30 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK) {
             String title = data.getStringExtra(AddEditNoteActivity.EXTRA_TITLE);
             String description = data.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION);
-            int priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 1);
 
-            Entity note = new Entity(title, description, priority);
+            Entity note = new Entity(title, description);
             noteViewModel.insert(note);
 
-            Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this, "Note Saved.", R.style.Success).show();
 
-        } else if (requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK) {
+        } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == RESULT_OK) {
             int id =data.getIntExtra(AddEditNoteActivity.EXTRA_ID, -1);
 
             if (id==-1){
-                Toast.makeText(this, "Note can't be updated!", Toast.LENGTH_SHORT).show();
+                StyleableToast.makeText(this, "Failed to update!", R.style.Warning).show();
                 return;
             }
 
             String title = data.getStringExtra(AddEditNoteActivity.EXTRA_TITLE);
             String description = data.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION);
-            int priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 1);
 
-            Entity note=new Entity(title, description, priority);
+            Entity note=new Entity(title, description);
             note.setId(id);
             noteViewModel.update(note);
-            Toast.makeText(this, "Note Update", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this, "Note Updated.", R.style.Success).show();
 
         } else {
-            Toast.makeText(this, "Note not Saved", Toast.LENGTH_SHORT).show();
+            StyleableToast.makeText(this, "Failed to save!", R.style.Warning).show();
         }
     }
 }

@@ -11,11 +11,12 @@ import android.widget.TextView;
 import com.vickikbt.notekeeper.Models.Quotes;
 import com.vickikbt.notekeeper.R;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private TextView textViewDate, textViewQuote;
-
-    private String mQuotes;
+    private TextView textViewDate;
 
     private Quotes quotes=new Quotes();
 
@@ -25,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splashscreen);
 
         textViewDate=findViewById(R.id.textView_date);
-        textViewQuote=findViewById(R.id.textView_quote);
+        TextView textViewQuote = findViewById(R.id.textView_quote);
         Button ok = findViewById(R.id.button_ok);
 
         ok.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +39,14 @@ public class SplashScreenActivity extends AppCompatActivity {
         });
 
         // Get a random fact and update textView
-        mQuotes = quotes.getRandomFact();
+        String mQuotes = quotes.getRandomFact();
         textViewQuote.setText(mQuotes);
+
+        //Get current date and update textView.
+        Calendar calendar=Calendar.getInstance();
+        String currentDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        textViewDate=findViewById(R.id.textView_date);
+        textViewDate.setText(currentDate + ".");
 
     }
 }

@@ -14,12 +14,10 @@ public class Entity extends Room {
 
     private String description;
 
-    private int priority;
 
-    public Entity(String title, String description, int priority) {
+    public Entity(String title, String description) {
         this.title = title;
         this.description = description;
-        this.priority = priority;
     }
 
     public void setId(int id) {
@@ -36,9 +34,5 @@ public class Entity extends Room {
 
     public String getDescription() {
         return description;
-    }
-
-    public int getPriority() {
-        return priority;
     }
 }
