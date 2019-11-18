@@ -12,46 +12,44 @@
         android:id="@+id/textView_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Sunday 17, November."
         android:textColor="@color/Black"
-        android:gravity="center"
+        android:layout_alignParentTop="true"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginTop="28dp"/>
+        android:textStyle="bold" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif_animation"
         android:layout_width="wrap_content"
-        android:layout_height="350dp"
-        android:src="@drawable/groovy_walk"
-        android:layout_below="@id/textView_date"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"/>
+        android:src="@drawable/groovy_walk" />
 
     <TextView
         android:id="@+id/textView_quote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daily Quotes"
-        android:textColor="@color/Black"
-        android:layout_below="@+id/gif_animation"
         android:gravity="center"
+        android:text="Daily Quotes"
+        android:layout_above="@+id/button_ok"
+        android:textColor="@color/Black"
         android:textSize="20sp"
-        android:textStyle="italic"
-        android:layout_marginTop="8dp"/>
+        android:textStyle="italic"/>
 
     <Button
         android:id="@+id/button_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ok_button"
         android:text="OK"
         android:textColor="@color/White"
-        android:background="@drawable/ok_button"
-        android:layout_below="@+id/textView_quote"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:textSize="20sp"
-        android:layout_gravity="center" />
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

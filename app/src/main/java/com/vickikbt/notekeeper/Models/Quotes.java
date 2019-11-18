@@ -7,9 +7,9 @@ public class Quotes {
             "Bado gari ni gari 🚗 kwa dereva. 💯",
             "Love what you do, do what you love ❤.",
             "Ata ukuwe mtamu😋 aje hauwezi jikula...peana hiyo kitu🍑",
-            "Nakata waba 🥃 nijifry liver",
             "Inauma 💔 but itabidi uzoe 👍",
-            "Trust no hoe."
+            "Wanting to be someone else is a waste of who you are."
+
     };
 
     public String getRandomFact() {

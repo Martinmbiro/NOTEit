@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.vickikbt.notekeeper.Adapter.NoteAdapter;
-import com.vickikbt.notekeeper.AddEditNoteActivity;
 import com.vickikbt.notekeeper.R;
 import com.vickikbt.notekeeper.Room.Entity;
 import com.vickikbt.notekeeper.ViewModel.NoteViewModel;

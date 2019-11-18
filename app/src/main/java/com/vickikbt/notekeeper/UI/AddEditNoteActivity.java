@@ -1,4 +1,4 @@
-package com.vickikbt.notekeeper;
+package com.vickikbt.notekeeper.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
+import com.vickikbt.notekeeper.R;
 import com.vickikbt.notekeeper.UI.MainActivity;
 
 public class AddEditNoteActivity extends AppCompatActivity {
