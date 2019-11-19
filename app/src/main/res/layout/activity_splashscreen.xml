@@ -35,11 +35,11 @@
         android:text="Daily Quotes"
         android:layout_above="@+id/button_ok"
         android:textColor="@color/Black"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="8dp"
         android:textSize="20sp"
-        android:textStyle="italic"/>
+        android:textStyle="normal"/>
 
     <Button
         android:id="@+id/button_ok"

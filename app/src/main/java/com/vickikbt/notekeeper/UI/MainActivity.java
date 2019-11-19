@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.muddzdev.styleabletoast.StyleableToast;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int ADD_NOTE_REQUEST = 1;
     public static final int EDIT_NOTE_REQUEST = 2;
 
+    LinearLayout linearLayout;
+
     private NoteViewModel noteViewModel;
 
 
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final NoteAdapter adapter = new NoteAdapter();
+
 
         FloatingActionButton fab = findViewById(R.id.fab_add);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(recyclerView);
 
+
         adapter.setOnItemClickListener(new NoteAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Entity note) {
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, EDIT_NOTE_REQUEST);
             }
         });
+
 
     }
 
