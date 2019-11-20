@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout linearLayout;
 
+    LinearLayoutManager linearLayoutManager;
+
     private NoteViewModel noteViewModel;
 
 
@@ -50,10 +52,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
         RecyclerView recyclerView = findViewById(R.id.recyclerView_main);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+
 
         noteViewModel = ViewModelProviders.of(this).get(NoteViewModel.class);
         noteViewModel.getAllNotes().observe(this, new Observer<List<Entity>>() {
