@@ -8,7 +8,7 @@
  - _Room DB_ -For offline storage of user's notes.
  - _Livedata_ -For data persistance.
 
- >You can download the app [here](https://github.com/VictorKabata/NOTEit.git "Download NOTEit ")
+ >You can download the app [here](https://drive.google.com/open?id=1In0qyn9wbha9hLzzZyW_0yWLrFHoPKLr "Download NOTEit ")
 
  # Prequisites
 You will need the following to run this project:
